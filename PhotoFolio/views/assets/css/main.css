@@ -290,13 +290,16 @@ h6 {
 }
 
 .header .logo {
+  position: relative;
   transition: 0.3s;
 }
 
-.header .logo img {
+.header .logo img{
   max-height: 40px;
   margin-right: 8px;
+
 }
+
 
 .header .logo h1 {
   font-size: 32px;
@@ -379,6 +382,7 @@ h6 {
     color: rgba(255, 255, 255, 0.5);
     white-space: nowrap;
     transition: 0.3s;
+    
   }
 
   .navbar a i,
