@@ -15,6 +15,21 @@ require_once './includes/cabecalho.inc';
             <h2>Estoque Drink's</h2>
             <p>Desfrute das melhores bebidas com preços irresistíveis. Aproveite as ofertas imperdíveis e brinde ao bom gosto e economia!</p>
 
+
+          <?php
+
+            session_start();
+            $Produtos = $_SESSION['bebidas'];
+
+          ?>
+
+
+
+
+
+
+
+
             <a class="Carrinho" href="contact.html">Carrinho</a>
 
           </div>

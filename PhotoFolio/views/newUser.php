@@ -1,5 +1,5 @@
 <?php
-  require_once './header.php'
+     require_once 'includes/cabecalho.inc';
 ?>
   <form class="container card my-2 py-2">
     <div class="mb-3">
@@ -24,6 +24,9 @@
     </div>
     <button type="submit" class="btn btn-primary">Cadastrar</button>
   </form>
+
 <?php
-  require_once './footer.php'
+
+require_once './includes/rodape.inc';
+
 ?>

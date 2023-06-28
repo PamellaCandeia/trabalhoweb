@@ -53,21 +53,11 @@
         <ul>
           <li><a href="index.php">Home</a></li>
           <li><a href="about.php">About</a></li>
-          <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><a href="#"><span>Serviços</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="gallery.php">Nature</a></li>
-              <li><a href="gallery.php">People</a></li>
-              <li><a href="gallery.php">Architecture</a></li>
-              <li><a href="gallery.php">Animals</a></li>
-              <li><a href="gallery.php">Sports</a></li>
-              <li><a href="gallery.php">Travel</a></li>
-              <li class="dropdown"><a href="#"><span>Sub Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Sub Menu 1</a></li>
-                  <li><a href="#">Sub Menu 2</a></li>
-                  <li><a href="#">Sub Menu 3</a></li>
-                </ul>
-              </li>
+              <li><a href="formBebida.php">Cadastrar Bebida</a></li>
+              <li><a href="gallery.php">Consultar Produtos</a></li>
+              
             </ul>
           </li>
           <li><a href="services.php">Services</a></li>
