@@ -33,8 +33,8 @@ require_once './includes/cabecalho.inc';
             
                 
               <div class="col-md-6 form-group mt-3 mt-md-0" >
-                <input type="email" class="form-control" name="email" name="pLogin" placeholder="Insira seu email" required><br>
-                <input type="text" class="form-control" name="senha" name="pSenha" placeholder="Insira sua senha" required><br>
+                <input type="email" class="form-control"  name="pLogin" placeholder="Insira seu email" required><br>
+                <input type="text" class="form-control"  name="pSenha" placeholder="Insira sua senha" required><br>
                 <select name="pTipo">
                   <option value="1">Administrador</option>
                   <option value="2">Cliente</option>

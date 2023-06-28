@@ -41,7 +41,7 @@ if($tipo == 1){
         header("Location: ../views/index.php");
     }
     else{
-        header("Location: ../views/login.php?erro=1");
+        header("Location: ../views/formLogin.php?erro=1");
     }
 }
 
