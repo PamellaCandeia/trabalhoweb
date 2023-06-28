@@ -12,10 +12,10 @@ require_once './includes/cabecalho.inc';
       <div class="container position-relative">
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
-            <h2>Gallery Single</h2>
-            <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+            <h2>Estoque Drink's</h2>
+            <p>Desfrute das melhores bebidas com preços irresistíveis. Aproveite as ofertas imperdíveis e brinde ao bom gosto e economia!</p>
 
-            <a class="cta-btn" href="contact.html">Available for hire</a>
+            <a class="Carrinho" href="contact.html">Carrinho</a>
 
           </div>
         </div>
@@ -111,21 +111,6 @@ require_once './includes/cabecalho.inc';
     </section><!-- End Gallery Single Section -->
 
   </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>PhotoFolio</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
  
 <?php
 
