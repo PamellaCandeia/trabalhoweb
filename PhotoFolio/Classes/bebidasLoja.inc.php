@@ -52,11 +52,11 @@ class Bebida{
     }
 
     public function getPeso(){
-        return $this->preco;
+        return $this->peso;
     }
 
     public function setPeso($bpeso){
-       return $this->preco = $bpeso;
+       return $this->peso = $bpeso;
     }
 
     public function getEstoque(){

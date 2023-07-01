@@ -41,7 +41,7 @@ require_once '../classes/bebidasLoja.inc.php';
                   <th>Nome</th>
                   <th>Volume</th>
                   <th>Preco</th>
-                  <th>Peso</th>
+                  <th>Kg</th>
                   <th>Em Estoque</th>
                   <th>Fabricante</th>
                   <th>Operação</th>

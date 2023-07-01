@@ -24,18 +24,18 @@
 
        
         if($opcao == 2){
-             header('Location: ../views/galleryBedidas.php');
+             header('Location: ../views/galleryBebidas.php');
         }else{
             //  header("Location: ../views/exibirProdutosVenda.php");
         }
 
 
     }else if($opcao==3){
-        // $id = $_REQUEST['id'];
-        // $produtoDao = new ProdutoDao();
-        // $produtoDao->excluirProduto($id);
+        $id = $_REQUEST['id'];
+        $bebidaDao = new BebidaDao();
+        $bebidaDao->excluirbebida($id);
 
-        // header('Location: controlerProduto.php?opcao=2');
+        header('Location: controlerBebida.php?opcao=2');
 
     }else if($opcao==4 ){ //buscar o produto a alterar
 

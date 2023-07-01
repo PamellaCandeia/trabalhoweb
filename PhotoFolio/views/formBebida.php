@@ -30,8 +30,8 @@
               <div class="col-md-6 form-group mt-3 mt-md-0" >
                 Nome da Bebida: <input type="text" class="form-control"  name="Nome" placeholder="Insira o nome da bebida" required><br>
                 volume: <input type="text" class="form-control"  name="Volume" placeholder="Insira o volume da bebida" required><br>
-                Preço: <input type="number" class="form-control"  name="Preco" placeholder="Insira o preço da bebida" required><br>
-                Peso: <input type="number" class="form-control"  name="Peso" placeholder="Insira o peso da bebida" required><br>
+                Preço: <input type="number" step="any" class="form-control"  name="Preco" placeholder="Insira o preço da bebida" required><br>
+                Peso em kg: <input type="number"  step="any" class="form-control"  name="Peso" placeholder="Insira o peso da bebida" required><br>
                 Estoque: <input type="number" class="form-control"  name="Estoque" placeholder="Insira a quantidade do estoque" required><br>
                 Fabricante: <input type="text" class="form-control" name="Fabricante" required>
                 <!-- <select name="fabricante">

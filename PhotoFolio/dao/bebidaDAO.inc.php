@@ -20,7 +20,7 @@
             $sql->bindValue(':nom', $produto->getNome());
             $sql->bindValue(':vol', $produto->getVolume());
             $sql->bindValue(':preco', $produto->getPreco());
-            $sql->bindValue(':peso', $produto->getPreco());
+            $sql->bindValue(':peso', $produto->getPeso());
             $sql->bindValue(':est', $produto->getEstoque());
             $sql->bindValue(':fab', $produto->getFabricante());
             $sql->execute();
@@ -28,7 +28,7 @@
 
         }
 
-        public function excluirproduto($id){
+        public function excluirBebida($id){
         
             $sql = $this->con->prepare("delete from bebidas where id_bebida = :id");
             $sql->bindValue(':id', $id);
