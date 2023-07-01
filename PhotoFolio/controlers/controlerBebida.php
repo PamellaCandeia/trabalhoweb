@@ -7,9 +7,9 @@
     if($opcao == 1){//incluir
      
         $produto = new Bebida();
-        $produto->setBebida($_REQUEST['nome'], $_REQUEST['volume'],$_REQUEST['preco'],$_REQUEST['peso'], $_REQUEST['qde_estoque'],$_REQUEST['fabricante']);
+        $produto->setBebida($_REQUEST['Nome'], $_REQUEST['Volume'],$_REQUEST['Preco'],$_REQUEST['Peso'], $_REQUEST['Estoque'],$_REQUEST['Fabricante']);
         $produtoDao = new BebidaDao();
-        $produtoDao->incluirProduto($produto);
+        $produtoDao->incluirBebida($produto);
 
         header('Location: controlerBebida.php?opcao=2');
 
@@ -24,7 +24,7 @@
 
        
         if($opcao == 2){
-             header('Location: ../views/index.php');
+             header('Location: ../views/galleryBedidas.php');
         }else{
             //  header("Location: ../views/exibirProdutosVenda.php");
         }

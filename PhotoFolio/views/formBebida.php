@@ -26,17 +26,14 @@
 
           <div class="col-lg-9">
             <form action="../controlers/controlerBebida.php" method="get" role="form" class="php-email-form h4" style="color: white;">
-              
-            
                 
               <div class="col-md-6 form-group mt-3 mt-md-0" >
-                Nome da Bebida: <input type="text" class="form-control"  name="pNome" placeholder="Insira o nome da bebida" required><br>
-                volume: <input type="text" class="form-control"  name="pVolume" placeholder="Insira o volume da bebida" required><br>
-                Preço: <input type="text" class="form-control"  name="pPreco" placeholder="Insira o preço da bebida" required><br>
-                Peso: <input type="text" class="form-control"  name="pPeso" placeholder="Insira o peso da bebida" required><br>
-                Estoque: <input type="text" class="form-control"  name="pEstoque" placeholder="Insira a quantidade do estoque" required><br>
-                Fabricante: 
-                <input type="text" size="20" name="fabricante">
+                Nome da Bebida: <input type="text" class="form-control"  name="Nome" placeholder="Insira o nome da bebida" required><br>
+                volume: <input type="text" class="form-control"  name="Volume" placeholder="Insira o volume da bebida" required><br>
+                Preço: <input type="number" class="form-control"  name="Preco" placeholder="Insira o preço da bebida" required><br>
+                Peso: <input type="number" class="form-control"  name="Peso" placeholder="Insira o peso da bebida" required><br>
+                Estoque: <input type="number" class="form-control"  name="Estoque" placeholder="Insira a quantidade do estoque" required><br>
+                Fabricante: <input type="text" class="form-control" name="Fabricante" required>
                 <!-- <select name="fabricante">
                     <option value="0">-</option>
                     <?php

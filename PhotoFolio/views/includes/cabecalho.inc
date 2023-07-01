@@ -55,8 +55,8 @@
           <li><a href="about.php">About</a></li>
           <li class="dropdown"><a href="#"><span>Bebidas</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="gallery.php">Cadastro de bebidas</a></li>
-              <li><a href="gallery.php">Portifolio</a></li>
+              <li><a href="../views/formBebida.php">Cadastro de bebidas</a></li>
+              <li><a href="galleryBebidas.php">Portifolio</a></li>
             </ul>
           </li>
           <li><a href="services.php">Services</a></li>

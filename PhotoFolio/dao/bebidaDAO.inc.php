@@ -12,7 +12,7 @@
             $this->con = $c->getConexao();
         }
 
-        public function incluirProduto(Bebida $produto){
+        public function incluirBebida(Bebida $produto){
             var_dump($this->con);
             $sql = $this->con->prepare("insert into bebidas (nome, volume, preco, peso, qde_estoque, fabricante)
             values(:nom, :vol, :preco, :peso, :est, :fab)");
@@ -20,6 +20,7 @@
             $sql->bindValue(':nom', $produto->getNome());
             $sql->bindValue(':vol', $produto->getVolume());
             $sql->bindValue(':preco', $produto->getPreco());
+            $sql->bindValue(':peso', $produto->getPreco());
             $sql->bindValue(':est', $produto->getEstoque());
             $sql->bindValue(':fab', $produto->getFabricante());
             $sql->execute();
