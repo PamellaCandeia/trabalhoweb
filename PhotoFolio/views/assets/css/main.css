@@ -120,26 +120,6 @@ h6 {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.page-header .Carrinho {
-  font-family: var(--font-primary);
-  font-weight: 400;
-  font-size: 14px;
-  display: inline-block;
-  padding: 12px 40px;
-  border-radius: 4px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: 0.3s;
-  color: #fff;
-  background: var(--color-primary);
-}
-
-.page-header .Carrinho:hover {
-  background: #2cbc85;
-}
-
-
-
 .page-header .cta-btn {
   font-family: var(--font-primary);
   font-weight: 400;
@@ -310,16 +290,13 @@ h6 {
 }
 
 .header .logo {
-  position: relative;
   transition: 0.3s;
 }
 
-.header .logo img{
+.header .logo img {
   max-height: 40px;
   margin-right: 8px;
-
 }
-
 
 .header .logo h1 {
   font-size: 32px;
@@ -402,7 +379,6 @@ h6 {
     color: rgba(255, 255, 255, 0.5);
     white-space: nowrap;
     transition: 0.3s;
-    
   }
 
   .navbar a i,
@@ -755,9 +731,9 @@ h6 {
 }
 
 .gallery .gallery-links .preview-link,
-.gallery .gallery-links .details-link{
+.gallery .gallery-links .details-link {
   font-size: 20px;
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
   transition: 0.3s;
   line-height: 1.2;
   margin: 30px 8px 0 8px;

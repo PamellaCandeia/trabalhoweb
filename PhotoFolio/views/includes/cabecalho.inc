@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/logo.png" rel="icon">
-  <link href="assets/img/logo.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,19 +45,30 @@
 
       <a href="index.php" class="logo d-flex align-items-center  me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-         <img src="assets/img/logo.png" alt=""> 
-        <h1>Drink's</h1>
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <i class="bi bi-camera"></i>
+        <h1>PhotoFolio</h1>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.php">Home</a></li>
           <li><a href="about.php">About</a></li>
-          <li class="dropdown"><a href="#"><span>Serviços</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="formBebida.php">Cadastrar Bebida</a></li>
-              <li><a href="gallery.php">Consultar Produtos</a></li>
-              
+              <li><a href="gallery.php">Nature</a></li>
+              <li><a href="gallery.php">People</a></li>
+              <li><a href="gallery.php">Architecture</a></li>
+              <li><a href="gallery.php">Animals</a></li>
+              <li><a href="gallery.php">Sports</a></li>
+              <li><a href="gallery.php">Travel</a></li>
+              <li class="dropdown"><a href="#"><span>Sub Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Sub Menu 1</a></li>
+                  <li><a href="#">Sub Menu 2</a></li>
+                  <li><a href="#">Sub Menu 3</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li><a href="services.php">Services</a></li>
