@@ -28,6 +28,9 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Exibicao de produtos -->
+  <link href="assets/css/exibicaoprodutos.css" rel="stylesheet">
+
   <!-- =======================================================
   * Template Name: PhotoFolio
   * Updated: May 30 2023 with Bootstrap v5.3.0

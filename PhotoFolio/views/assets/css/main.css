@@ -359,6 +359,7 @@ h6 {
     display: flex;
     list-style: none;
     align-items: center;
+    background-color: black;
   }
 
   .navbar li {
@@ -379,6 +380,7 @@ h6 {
     color: rgba(255, 255, 255, 0.5);
     white-space: nowrap;
     transition: 0.3s;
+    background-color: black;
   
   }
 
@@ -387,6 +389,7 @@ h6 {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
+    background-color: black;
   }
 
   .navbar a:hover,
@@ -394,6 +397,7 @@ h6 {
   .navbar .active:focus,
   .navbar li:hover>a {
     color: #fff;
+    background-color: black;
   }
 
   .navbar .dropdown ul {
@@ -409,12 +413,12 @@ h6 {
     background: var(--color-secondary);
     transition: 0.3s;
     border-radius: 4px;
-    background-color: black;
+    background-color: black !important;
   }
 
   .navbar .dropdown ul li {
     min-width: 200px;
-    
+    background-color: black !important;
   }
 
   
@@ -424,29 +428,33 @@ h6 {
     font-size: 15px;
     text-transform: none;
     font-weight: 400;
+    background-color: #000 !important;
   }
 
   .navbar .dropdown ul a i {
     font-size: 12px;
+    background-color: #000 !important;
   }
 
   .navbar .dropdown ul a:hover,
   .navbar .dropdown ul .active:hover,
   .navbar .dropdown ul li:hover>a {
     color: #fff;
-    background-color: #000;
+    background-color: #000 !important;
   }
 
   .navbar .dropdown:hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
+    background-color: black;
   }
 
   .navbar .dropdown .dropdown ul {
     top: 0;
     left: calc(100% - 30px);
     visibility: hidden;
+    background-color: black;
   }
 
   .navbar .dropdown .dropdown:hover>ul {
@@ -454,6 +462,7 @@ h6 {
     top: 0;
     left: 100%;
     visibility: visible;
+    background-color: black;
    
   }
 }
@@ -461,11 +470,13 @@ h6 {
 @media (min-width: 1280px) and (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;
+    background-color: black;
     
   }
 
   .navbar .dropdown .dropdown:hover>ul {
     left: -100%;
+    background-color: black;
    
   }
 }
@@ -475,7 +486,9 @@ h6 {
   .mobile-nav-show,
   .mobile-nav-hide {
     display: none;
+    background-color: black;
   }
+  
 }
 
 /*--------------------------------------------------------------
@@ -549,6 +562,7 @@ h6 {
   .navbar .dropdown>.dropdown-active,
   .navbar .dropdown .dropdown>.dropdown-active {
     display: block;
+    background-color: black;
   }
 
   .mobile-nav-show {
@@ -559,6 +573,7 @@ h6 {
     transition: 0.5s;
     z-index: 9999;
     margin: 0 10px 0 10px;
+    background-color: black;
   }
 
   .mobile-nav-hide {
