@@ -15,14 +15,24 @@ class Cliente
         $this->endereco = $endereco;
     }
 
+    public function getID_cliente()
+    {
+        return $this->id_cliente;
+    }
+
+    public function setID_cliente($id)
+    {
+        $this->id_cliente = $id;
+    }
+
     public function getCNPJ()
     {
         return $this->cnpj;
     }
 
-    public function setCNPJ($cpf)
+    public function setCNPJ($cnpj)
     {
-        $this->cpf = $cpf;
+        $this->cnpj = $cnpj;
     }
 
     public function getNome()
@@ -35,93 +45,14 @@ class Cliente
         $this->nome = $nome;
     }
 
-    public function getLogradouro()
+    public function getEndereco()
     {
-        return $this->logradouro;
+        return $this->endereco;
     }
 
-    public function setLogradouro($logradouro)
+    public function setEndereco($endereco)
     {
-        $this->logradouro = $logradouro;
+        $this->endereco = $endereco;
     }
 
-    public function getCidade()
-    {
-        return $this->cidade;
-    }
-
-    public function setCidade($cidade)
-    {
-        $this->cidade = $cidade;
-    }
-
-    public function getEstado()
-    {
-        return $this->estado;
-    }
-
-    public function setEstado($estado)
-    {
-        $this->estado = $estado;
-    }
-
-    public function getCEP()
-    {
-        return $this->cep;
-    }
-
-    public function setCEP($cep)
-    {
-        $this->cep = $cep;
-    }
-
-    public function getTelefone()
-    {
-        return $this->telefone;
-    }
-
-    public function setTelefone($telefone)
-    {
-        $this->telefone = $telefone;
-    }
-
-    public function getDataNascimento()
-    {
-        return $this->data_nascimento;
-    }
-
-    public function setDataNascimento($data_nascimento)
-    {
-        $this->data_nascimento = strtotime($data_nascimento);
-    }
-
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    public function getSenha()
-    {
-        return $this->senha;
-    }
-
-    public function setSenha($senha)
-    {
-        $this->senha = $senha;
-    }
-
-    public function getRG()
-    {
-        return $this->rg;
-    }
-
-    public function setRG($rg)
-    {
-        $this->rg = $rg;
-    }
 }
