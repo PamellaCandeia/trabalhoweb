@@ -32,7 +32,7 @@ require_once '../classes/bebidasLoja.inc.php';
   
       <font face="Tahoma" color="white">
         <div align="center">
-        ---- TABELA DE BEBIDAS NO SITEMA -----
+        ---- BEBIDAS NO SISTEMA -----
         
       
       <table border="1" align="center" cellspacing="2" cellpadding="1" width="80%"  class="table table-dark">
