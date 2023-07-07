@@ -1,8 +1,8 @@
 <?php
-require_once "Produto.inc.php";
+require_once "bebeidasLoja.inc.php";
 class Item
 {
-    private Produto $produto;
+    private Bebida $produto;
     private $quantidade;
     private $valorItem;
 
