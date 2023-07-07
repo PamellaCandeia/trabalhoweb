@@ -46,7 +46,7 @@ require_once '../classes/bebidasLoja.inc.php';
                   <th>Fabricante</th>
                   <th>Operação</th>
               </tr>
-              
+              <!-- // -->
               <?php 
               
               
