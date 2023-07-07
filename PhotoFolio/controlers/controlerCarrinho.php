@@ -69,8 +69,8 @@ if ($opcao == 4) {
     session_start();
     $_SESSION["total"] = $total;
     if (isset($_SESSION["cliente"])) {
-        header("Location: ../views/dadosCompra.php");
+        header("Location: ../views/dadosPagamento.php");
     } else {
-        header("Location: ../views/formLoginCliente.php");
+        header("Location: ../views/formLogin.php");
     }
 }

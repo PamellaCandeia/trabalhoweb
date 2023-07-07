@@ -1,58 +1,61 @@
 <?php
 
-    require_once("../classes/Venda.inc.php");
-    require_once("../classes/Item.inc.php");
-    require_once("conexao.inc.php");
-    require_once("../utils/utils.inc.php");
+    require_once '../classes/venda.inc.php';
+    require_once '../classes/Item.inc.php';
+    require_once 'connection.php';
+    require_once '../utils/Utilidade.inc.php';
     
     class VendaDAO{
+        private $con;
 
         public function __construct()
         {
-            $conexao = new Conexao();
+            $conexao = new Connection();
             $this->con = $conexao->getConexao();
         }
 
         private function getUltimaVenda(){
-            $sql = $this->con->query("SELECT MAX(id_venda) AS maior FROM vendas")
+            $sql = $this->con->query("select MAX(id_compra) as maior from compras");
             $sql->execute();
 
             $row = $sql->fetch(PDO::FETCH_OBJ);
+
             return $row->maior;
-        };
+        }
 
-        private function incluirItens($id_venda, $carrinho){
-            $id_item = 1;
+        private function incluirItens($id_Compra, $carrinho){
+            //$id_item = 1;
             foreach($carrinho as $item){
-                $sql = this->con->query("
-                    INSERT INTO itens (id_item, id_produto, quantidade, valorTotal, id_venda
-                    VALUES (:id, :idProd, :quant, :val, :idVenda)
-                ")
+                $sql = $this->con->prepare("
+                    insert into itens_compra ( id_bebida, quantidade, valor_item, id_compra)
+                    values (:idBebida, :quant, :valItem, :idC)
+                ");
                 
-                $sql->bindvalue(':id', $id_item);
-                $sql->bindvalue(':idProd', $item->getProduto()->getProduto());//getProdutoId(); 
-                $sql->bindvalue(':quant', $item->getProduto()->getQuantidade());
-                $sql->bindvalue(':val', $item->getProduto()->getValorItem());
-                $sql->bindvalue(':id', $id_venda);
+               // $sql->bindvalue(':id', $id_item);
+                $sql->bindvalue(':idBebida', $item->getBebida()->getBebida_id());//getProdutoId(); 
+                $sql->bindvalue(':quant', $item->getQuantidade());
+                $sql->bindvalue(':val', $item->getValorItem());
+                $sql->bindvalue(':idC', $id_Compra);
                 $sql->execute();
-                $id_item++;
+               // $id_item++;
             }
-        };
+        }
 
-        public function incluirVenda(Venda $venda, $carrinho){
-            $sql = this->con->query("
-                INSERT INTO itens (cpf_cliente, dataVenda, valorTotal
-                VALUES (:cpf, :dtaVenda, :total)
-            ")
+        public function incluirVenda(Venda $compra, $carrinho){
+            $sql = $this->con->prepare("
+                insert into compras (id_cliente, data_compra, valor_total, valortotal_frete)
+                values (:cliente, :dataCompra, :total, :frete)
+            ");
             
-            $sql->bindvalue(':cpf', $venda->getCpf());
-            $sql->bindvalue(':data', converteDataMysql($venda->getData()));//getProdutoId(); 
-            $sql->bindvalue(':total', $venda->getTotal());
+            $sql->bindvalue(':cliente', $compra->getId_Cliente());
+            $sql->bindvalue(':dataCompra', convertDataMysql($compra->getData()));//getProdutoId(); 
+            $sql->bindvalue(':total', $compra->getTotal());
+            $sql->bindvalue(':frete', $compra->getFrete());
             $sql->execute();
 
             $id = $this->getUltimaVenda();
             $this->incluirItens($id, $carrinho);
-        };
+        }
 
         
     }

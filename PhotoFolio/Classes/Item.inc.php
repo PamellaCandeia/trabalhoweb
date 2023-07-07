@@ -1,6 +1,7 @@
 <?php
-// require_once "bebeidasLoja.inc.php";
-class Item
+ require_once "bebidasLoja.inc.php";
+
+ class Item
 {
     private Bebida $bebida;
     private $quantidade;
@@ -33,7 +34,7 @@ class Item
         $this->valorItem = $this->quantidade * $this->bebida->getPreco();
     }
 
-    public function getbebida()
+    public function getBebida()
     {
         return $this->bebida;
     }

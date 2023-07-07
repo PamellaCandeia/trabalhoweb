@@ -20,7 +20,7 @@ if (isset($_SESSION["carrinho"]) && sizeof($_SESSION["carrinho"]) != 0) { // pas
       <div class="container position-relative">
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
-            <h2>Portifolio de Bebidas</h2>
+            <h2>Carrinho de Compras</h2>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@ if (isset($_SESSION["carrinho"]) && sizeof($_SESSION["carrinho"]) != 0) { // pas
                   <td><?php echo $item->getbebida()->getPeso(); ?></td>
                   <td><?php echo $item->getbebida()->getEstoque(); ?></td>
                   <td><?php echo $item->getbebida()->getFabricante(); ?></td>
-                  <td><a href='../controlers/controlerbebida.php?opcao=4&id=<?= $item->getbebida()->getBebida_id()?>'>Alterar</a>&nbsp;<a href='../controlers/controlerbebida.php?opcao=3&id=<?= $Bebida->getBebida_id()?>'>Excluir</a></td>
+                  <td><a href='../controlers/controlerbebida.php?opcao=4&id=<?= $item->getbebida()->getBebida_id()?>'>Alterar</a>&nbsp;<a href='../controlers/controlerbebida.php?opcao=3&id=<?= $item->getbebida()->getBebida_id()?>'>Excluir</a></td>
                 </tr>
               <?php
                 $soma += $item->getValorItem();
