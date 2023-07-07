@@ -12,17 +12,17 @@
             $this->con = $c->getConexao();
         }
 
-        public function incluirBebida(Bebida $produto){
+        public function incluirBebida(Bebida $bebida){
             var_dump($this->con);
             $sql = $this->con->prepare("insert into bebidas (nome, volume, preco, peso, qde_estoque, fabricante)
             values(:nom, :vol, :preco, :peso, :est, :fab)");
 
-            $sql->bindValue(':nom', $produto->getNome());
-            $sql->bindValue(':vol', $produto->getVolume());
-            $sql->bindValue(':preco', $produto->getPreco());
-            $sql->bindValue(':peso', $produto->getPeso());
-            $sql->bindValue(':est', $produto->getEstoque());
-            $sql->bindValue(':fab', $produto->getFabricante());
+            $sql->bindValue(':nom', $bebida->getNome());
+            $sql->bindValue(':vol', $bebida->getVolume());
+            $sql->bindValue(':preco', $bebida->getPreco());
+            $sql->bindValue(':peso', $bebida->getPeso());
+            $sql->bindValue(':est', $bebida->getEstoque());
+            $sql->bindValue(':fab', $bebida->getFabricante());
             $sql->execute();
 
 
@@ -37,64 +37,59 @@
         }
 
 
-        public function getProdutos(){
+        public function getbebidas(){
             $rs = $this->con->query("SELECT * FROM bebidas");
 
             $lista = array();
 
             while($row = $rs->fetch(PDO::FETCH_OBJ)){
-                $produto = new Bebida();
-                $produto->setBebida_id($row->id_bebida);
-                $produto->setVolume($row->volume);
-                $produto->setNome($row->nome);
-                $produto->setPreco($row->preco);
-                $produto->setPeso($row->peso);
-                $produto->setEstoque($row->qde_estoque);
-                $produto->setFabricante($row->fabricante);
+                $bebida = new Bebida();
+                $bebida->setBebida_id($row->id_bebida);
+                $bebida->setVolume($row->volume);
+                $bebida->setNome($row->nome);
+                $bebida->setPreco($row->preco);
+                $bebida->setPeso($row->peso);
+                $bebida->setEstoque($row->qde_estoque);
+                $bebida->setFabricante($row->fabricante);
 
-                $lista[] =  $produto;
+                $lista[] =  $bebida;
                 //o atributo do row é o mesmo nome do banco;
             }
             return $lista;
         }
 
-        // public function AlterarProdutos(Produto $produto){
-        //    // var_dump($this->con);
-        //     $sql = $this->con->prepare("update produtos set nome=:nom, descricao=:desc, data_fabricacao=:data, preco=:preco, estoque=:est, referencia=:ref, cod_fabricante=:fab
-        //     where produto_id = :id");
+        public function Alterarbebidas(bebida $bebida){
+            $sql = $this->con->prepare("update bebidas set nome=:nom, volume=:vol, preco=:preco, peso=:peso, qde_estoque=:est, fabricante=:fab where id_bebida = :id");
 
-        //     $sql->bindValue(':nom', $produto->getNome());
-        //     $sql->bindValue(':desc', $produto->getDescricao());
-        //     $sql->bindValue(':preco', $produto->getPreco());
-        //     $sql->bindValue(':est', $produto->getEstoque());
-        //     $sql->bindValue(':ref', $produto->getRef());
-        //     $sql->bindValue(':fab', $produto->getFabricante());
-        //     $sql->bindValue(':data', convertDataMysql($produto->getData()));
-        //     $sql->bindValue(':id', $produto->getProduto_id());
-        //     $sql->execute();
-
-        // }
-
-
-        public function getProduto($id){
-
-            $sql = $this->con->prepare("select * from bebidas where id_bebida = :id");
-            $sql->bindValue(':id', $id);
+            $sql->bindValue(':nom', $bebida->getNome());
+            $sql->bindValue(':vol', $bebida->getVolume());
+            $sql->bindValue(':preco', $bebida->getPreco());
+            $sql->bindValue(':peso', $bebida->getPeso());
+            $sql->bindValue(':est', $bebida->getEstoque());
+            $sql->bindValue(':fab', $bebida->getFabricante());
+            $sql->bindValue(':id', $bebida->getbebida_id());
             $sql->execute();
 
-            $row = $sql->fetch(PDO::FETCH_OBJ);
-            $produto = new Bebida();
-            $produto->setBebida_id($row->id_bebida);
-            $produto->setVolume($row->volume);
-            $produto->setNome($row->nome);
-            $produto->setPreco($row->preco);
-            $produto->setPeso($row->peso);
-            $produto->setEstoque($row->qde_estoque);
-            $produto->setFabricante($row->fabricante);
+        }
 
-            return $produto;
-           
-            
+        public function getbebida($id){
+            $sql = "SELECT * FROM bebidas where id_bebida = :id";
+            $stmt = $this->con->prepare($sql);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            $resultSet = $stmt->fetch(PDO::FETCH_OBJ);
+            return $this->criaRetornoBebida($resultSet);
+        }
+        function criaRetornoBebida($row){
+            $bebida = new Bebida();
+            $bebida->setBebida_id($row->id_bebida);
+            $bebida->setNome($row->nome);
+            $bebida->setVolume($row->volume);
+            $bebida->setPreco($row->preco);
+            $bebida->setPeso($row->peso);
+            $bebida->setEstoque($row->qde_estoque);
+            $bebida->setFabricante($row->fabricante);
+            return $bebida;
         }
 
        
