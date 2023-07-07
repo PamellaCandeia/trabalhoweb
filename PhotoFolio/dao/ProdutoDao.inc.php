@@ -1,32 +1,32 @@
-<?php
+<!-- <?php
 
-    require_once 'connection.php';
-    require_once '../classes/produtoLoja.inc.php';
+    // require_once 'connection.php';
+    // require_once '../classes/produtoLoja.inc.php';
     // require_once '../utils/Utilidade.inc.php';
 
-    class ProdutoDao{
-        private $con;
+    // class ProdutoDao{
+    //     private $con;
 
-        function __construct(){
-            $c = new Connection();
-            $this->con = $c->getConexao();
-        }
+    //     function __construct(){
+    //         $c = new Connection();
+    //         $this->con = $c->getConexao();
+    //     }
 
-        public function incluirProduto(Produto $produto){
-            var_dump($this->con);
-            $sql = $this->con->prepare("insert into bebidas (nome, volume, preco, peso, qde_estoque, fabricante)
-            values(:nom, :vol, :preco, :peso, :est, :fab)");
+    //     public function incluirProduto(Produto $produto){
+    //         var_dump($this->con);
+    //         $sql = $this->con->prepare("insert into bebidas (nome, volume, preco, peso, qde_estoque, fabricante)
+    //         values(:nom, :vol, :preco, :peso, :est, :fab)");
 
-            $sql->bindValue(':nom', $produto->getNome());
-            $sql->bindValue(':vol', $produto->getvolume());
-            $sql->bindValue(':preco', $produto->getPreco());
-            $sql->bindValue(':peso', $produto->getPeso());
-            $sql->bindValue(':est', $produto->getEstoque());
-            $sql->bindValue(':fab', $produto->getFabricante());
-            $sql->execute();
+    //         $sql->bindValue(':nom', $produto->getNome());
+    //         $sql->bindValue(':vol', $produto->getvolume());
+    //         $sql->bindValue(':preco', $produto->getPreco());
+    //         $sql->bindValue(':peso', $produto->getPeso());
+    //         $sql->bindValue(':est', $produto->getEstoque());
+    //         $sql->bindValue(':fab', $produto->getFabricante());
+    //         $sql->execute();
 
 
-        }
+    //     }
 
         // public function excluirproduto($id){
         
@@ -112,4 +112,4 @@
 
 
 
-?>
+?> -->

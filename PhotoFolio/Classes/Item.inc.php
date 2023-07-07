@@ -1,16 +1,16 @@
 <?php
-require_once "bebeidasLoja.inc.php";
+// require_once "bebeidasLoja.inc.php";
 class Item
 {
-    private Bebida $produto;
+    private Bebida $bebida;
     private $quantidade;
     private $valorItem;
 
-    function __construct($produto)
+    function __construct($bebida)
     {
-        $this->produto = $produto;
+        $this->bebida = $bebida;
         $this->quantidade = 1;
-        $this->valorItem = $produto->getPreco();
+        $this->valorItem = $bebida->getPreco();
     }
 
     public function getQuantidade()
@@ -30,11 +30,11 @@ class Item
 
     public function setValorItem()
     {
-        $this->valorItem = $this->quantidade * $this->produto->getPreco();
+        $this->valorItem = $this->quantidade * $this->bebida->getPreco();
     }
 
-    public function getProduto()
+    public function getbebida()
     {
-        return $this->produto;
+        return $this->bebida;
     }
 }
