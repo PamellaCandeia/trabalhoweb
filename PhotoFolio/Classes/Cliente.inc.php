@@ -6,13 +6,18 @@ class Cliente
     private $cnpj;
     private $endereco;
     private $id_cidade;
+    private $login;
+    private $senha;
    
     
-    public function setCliente($nome, $cnpj, $endereco)
+    public function setCliente($nome, $cnpj, $endereco, $id_cidade, $login, $senha)
     {
         $this->nome = $nome;
         $this->cnpj = $cnpj;
         $this->endereco = $endereco;
+        $this->id_cidade = $id_cidade;
+        $this->login = $login;
+        $this->senha = $senha;
     }
 
     public function getID_cliente()
@@ -54,5 +59,38 @@ class Cliente
     {
         $this->endereco = $endereco;
     }
+
+    public function getCidade()
+    {
+        return $this->id_cidade;
+    }
+
+    public function setCidade($id_cidade)
+    {
+        $this->id_cidade = $id_cidade;
+    }
+
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    public function setLogin($login)
+    {
+        $this->login = $login;
+    }
+
+    public function getSenha()
+    {
+        return $this->senha;
+    }
+
+    public function setSenha($senha)
+    {
+        $this->senha = $senha;
+    }
+
+
+
 
 }

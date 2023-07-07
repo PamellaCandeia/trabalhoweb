@@ -28,17 +28,17 @@ require_once './includes/cabecalho.inc';
         <div class="row justify-content-center mt-4">
 
           <div class="col-lg-9">
-            <form action="../controlers/loginControler.php" method="get" role="form" class="php-email-form">
+            <form action="../controlers/controlerCliente.php" method="get" role="form" class="php-email-form">
               
             
                 
               <div class="col-md-6 form-group mt-3 mt-md-0" >
-                <input type="email" class="form-control" name="email" name="pLogin" placeholder="Insira seu email" required><br>
-                <input type="text" class="form-control" name="senha" name="pSenha" placeholder="Insira sua senha" required><br>
-                <select name="pTipo">
-                  <option value="1">Administrador</option>
-                  <option value="2">Cliente</option>
-                </select><br><br>
+                <h3 style="color: white;">Email:</h3>
+                <input type="text" class="form-control"  name="pLogin" placeholder="Insira seu email" required><br>
+                <h3 style="color: white;">Senha:</h3>
+                <input type="text" class="form-control"  name="pSenha" placeholder="Insira sua senha" required><br>
+                <input type="hidden" value="1" name="opcao">
+                <br><br>
               </div>
               
               

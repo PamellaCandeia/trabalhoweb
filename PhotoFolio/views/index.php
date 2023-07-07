@@ -9,7 +9,7 @@
         <div class="col-lg-6 text-center">
           <h2>Bem Vindo à Drink's</h2>
           <p>Refresque seu paladar com a nossa seleção de bebidas, onde sabor e qualidade se encontram em cada gole!</p>
-          <a href="formLogin.php" class="btn-get-started">Seja nosso Cliente!</a>
+          <a href="../controlers/controlerCidades.php?opcao=2" class="btn-get-started">Seja nosso Cliente!</a>
         </div>
       </div>
     </div>
