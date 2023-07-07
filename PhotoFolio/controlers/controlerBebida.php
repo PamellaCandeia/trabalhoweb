@@ -6,17 +6,17 @@
 
     if($opcao == 1){//incluir
      
-        $produto = new Bebida();
-        $produto->setBebida($_REQUEST['Nome'], $_REQUEST['Volume'],$_REQUEST['Preco'],$_REQUEST['Peso'], $_REQUEST['Estoque'],$_REQUEST['Fabricante']);
-        $produtoDao = new BebidaDao();
-        $produtoDao->incluirBebida($produto);
+        $bebida = new Bebida();
+        $bebida->setBebida($_REQUEST['Nome'], $_REQUEST['Volume'],$_REQUEST['Preco'],$_REQUEST['Peso'], $_REQUEST['Estoque'],$_REQUEST['Fabricante']);
+        $bebidaDao = new BebidaDao();
+        $bebidaDao->incluirBebida($bebida);
 
         header('Location: controlerBebida.php?opcao=2');
 
     }else if($opcao == 2 || $opcao == 6){//exibir todos
 
-         $produtoDao = new BebidaDao();
-         $lista = $produtoDao->getProdutos();
+         $bebidaDao = new BebidaDao();
+         $lista = $bebidaDao->getbebidas();
 
          session_start();
          $_SESSION['bebidas'] = $lista;
@@ -26,7 +26,7 @@
         if($opcao == 2){
              header('Location: ../views/galleryBebidas.php');
         }else{
-            //  header("Location: ../views/exibirProdutosVenda.php");
+            //  header("Location: ../views/exibirbebidasVenda.php");
         }
 
 
@@ -37,29 +37,29 @@
 
         header('Location: controlerBebida.php?opcao=2');
 
-    }else if($opcao==4 ){ //buscar o produto a alterar
+    }else if($opcao == 4){ //buscar o bebida a alterar
 
-        // $id = $_REQUEST['id'];
-        // $produtoDao = new ProdutoDao();
-        // $produto = $produtoDao->getProduto($id);
+        $id = $_REQUEST['id'];
+        $bebidaDao = new BebidaDao();
+        $bebida = $bebidaDao->getbebida($id);
 
-        // session_start();
-        // $_SESSION['produtos'] = $produto;
+        session_start();
+        $_SESSION['bebida'] = $bebida;
 
        
-        // header('Location: controlerFabricante.php?opcao=3');
+        header("Location: ../views/formBebida.php?id=$id");
       
        
 
     }else if($opcao == 5){//alteração
 
-        // $produto = new Produto();
-        // $produto->setProduto($_REQUEST['nome'], $_REQUEST['descricao'], $_REQUEST['data'], $_REQUEST['preco'], $_REQUEST['estoque'], $_REQUEST['Referencia'], $_REQUEST['fabricante']);
-        // $produto->setProduto_id($_REQUEST['pid']);
-        // $produtoDao = new ProdutoDao();
-        // $produtoDao->AlterarProdutos($produto);
+        $bebida = new bebida();
+        $bebida->setbebida($_REQUEST['Nome'], $_REQUEST['Volume'],$_REQUEST['Preco'],$_REQUEST['Peso'], $_REQUEST['Estoque'],$_REQUEST['Fabricante']);
+        $bebida->setbebida_id($_REQUEST['pid']);
+        $bebidaDao = new bebidaDao();
+        $bebidaDao->Alterarbebidas($bebida);
 
-        // header('Location: controlerProduto.php?opcao=2');
+        header('Location: controlerbebida.php?opcao=2');
 
 
     }

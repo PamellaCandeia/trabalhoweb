@@ -18,7 +18,7 @@ $listaBebidas = $_SESSION["bebidas"];
             <h2>Drink's Coleção</h2>
             <p>Refresque seu paladar com a nossa seleção de bebidas, onde sabor e qualidade se encontram em cada gole!</p>
             <div align="right">
-              <a class="cta-btn" href="../controlers/controlerCarrinho.php?opcao=4">Meu Carrinho</a>
+              <a class="cta-btn" href="../controlers/controlerCarrinho.php?opcao=2">Meu Carrinho</a>
             </div>
           </div>
         </div>

@@ -1,6 +1,10 @@
 
 <?php
      require_once 'includes/cabecalho.inc';
+     session_start();
+     if(isset($_SESSION['bebida'])){
+      $bebida = $_SESSION['bebida'];
+     }
 ?>
 
   <!-- ======= Hero Section ======= -->
@@ -21,33 +25,44 @@
     <section id="contact" class="contact">
       <div class="container">
 
-        
+        <?=var_dump($_SESSION['bebida']);?>
         <div class="row justify-content-center mt-4">
 
           <div class="col-lg-9">
             <form action="../controlers/controlerBebida.php" method="get" role="form" class="php-email-form h4" style="color: white;">
+              
+              <?php
+              if(isset($_REQUEST['id'])) :
+              ?>
+                <div class="col-md-6 form-group mt-3 mt-md-0" >
+                <input type="hidden" name="pid" value="1">
+                Nome da Bebida: <input type="text" class="form-control"  name="Nome" placeholder="Insira o nome da bebida" required value="<?=$id?>"><br>
+                volume: <input type="text" class="form-control"  name="Volume" placeholder="Insira o volume da bebida" required><br>
+                Preço: <input type="number" step="any" class="form-control"  name="Preco" placeholder="Insira o preço da bebida" required><br>
+                Peso em kg: <input type="number"  step="any" class="form-control"  name="Peso" placeholder="Insira o peso da bebida" required><br>
+                Estoque: <input type="number" class="form-control"  name="Estoque" placeholder="Insira a quantidade do estoque" required><br>
+                Fabricante: <input type="text" class="form-control" name="Fabricante" required>
+              </div>
+
+              <input type="hidden" name="opcao" value="5"><p></p>
+              <div class="text-center"><button type="submit">Alterar</button> <input type="reset" value="Cancelar" ></div>
+              <?php
+                else :
                 
-              <div class="col-md-6 form-group mt-3 mt-md-0" >
+              ?>
+                <div class="col-md-6 form-group mt-3 mt-md-0" >
                 Nome da Bebida: <input type="text" class="form-control"  name="Nome" placeholder="Insira o nome da bebida" required><br>
                 volume: <input type="text" class="form-control"  name="Volume" placeholder="Insira o volume da bebida" required><br>
                 Preço: <input type="number" step="any" class="form-control"  name="Preco" placeholder="Insira o preço da bebida" required><br>
                 Peso em kg: <input type="number"  step="any" class="form-control"  name="Peso" placeholder="Insira o peso da bebida" required><br>
                 Estoque: <input type="number" class="form-control"  name="Estoque" placeholder="Insira a quantidade do estoque" required><br>
                 Fabricante: <input type="text" class="form-control" name="Fabricante" required>
-                <!-- <select name="fabricante">
-                    <option value="0">-</option>
-                    <?php
-                    // foreach($fabricantes as $fab){
-                    //     echo "<option value='$fab->codigo'>$fab->nome</option>";
-                    // }
-                        
-                    ?>
-                </select> -->
-              </div>
-
-              <input type="hidden" name="opcao" value="1"><p></p>
+                <input type="hidden" name="opcao" value="1"><p></p>
+                <div class="text-center"><button type="submit">Cadastrar</button> <input type="reset" value="Cancelar" ></div>
+              <?php
+                endif;
+              ?>              
               
-              <div class="text-center"><button type="submit">Cadastrar</button> <input type="reset" value="Cancelar" ></div>
 
            
 

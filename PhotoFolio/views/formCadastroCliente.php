@@ -97,7 +97,7 @@ require_once './includes/cabecalho.inc';
                     if (isset($_REQUEST['erro'])) // verifica se o erro foi setado
                     {
                         if ((int)($_REQUEST['erro']) == 1) // captura e ver o tipo do erro, no caso, 1
-                            echo "<b><font face='Verdana' size='2' color='red'>Menores de Idade!</font><b>";
+                            echo "<b><font face='Verdana' size='2' color='red'>Nossos clientes não devem ser Menores de Idade!</font><b>";
                         
                     }
                 ?>

@@ -1,5 +1,5 @@
 <?php
-require_once("../dao/produtoDAO.inc.php");
+require_once("../dao/bebidadao.inc.php");
 require_once("../classes/Item.inc.php");
 
 $opcao = $_REQUEST['opcao'];
@@ -8,7 +8,7 @@ function array_search2($chave, $vetor)
 {
     $index = -1;
     for ($i = 0; $i < count($vetor); $i++) {
-        if ($chave == $vetor[$i]->getProduto()->getProdutoId()) {
+        if ($chave == $vetor[$i]->getbebida()->getBebida_id()) {
             $index = $i;
             break;
         }
@@ -18,8 +18,8 @@ function array_search2($chave, $vetor)
 
 if ($opcao == 1) {
     $id = $_REQUEST['id'];
-    $produtoDAO = new ProdutoDAO();
-    $produto = $produtoDAO->consultarProdutoPorId($id);
+    $bebidadao = new bebidadao();
+    $bebida = $bebidadao->getbebida($id);
 
     session_start();
     if (!isset($_SESSION["carrinho"])) {
@@ -28,8 +28,8 @@ if ($opcao == 1) {
         $carrinho = $_SESSION["carrinho"];
     }
 
-    $item = new Item($produto);
-    $index = array_search2($item->getProduto()->getProdutoId(), $carrinho);
+    $item = new Item($bebida);
+    $index = array_search2($item->getbebida()->getBebida_id(), $carrinho);
     if ($index != -1) {
         $carrinho[$index]->setQuantidade();
         $carrinho[$index]->setValorItem();
@@ -38,7 +38,7 @@ if ($opcao == 1) {
     }
 
     $_SESSION["carrinho"] = $carrinho;
-    // header("Location: ../views/exibirCarrinho.php");
+    header("Location: ../views/exibirCarinho.php");
 }
 
 if ($opcao == 2) {
@@ -47,7 +47,7 @@ if ($opcao == 2) {
     $carrinho = $_SESSION["carrinho"];
 
     for ($i = 0; $i < count($carrinho); $i++) {
-        if ($index == $carrinho[$i]->getProduto()->getProdutoId()) {
+        if ($index == $carrinho[$i]->getbebida()->getBebida_id()) {
             unset($carrinho[$i]);
             break;
         }
@@ -61,7 +61,7 @@ if ($opcao == 3) {
     session_start();
 
     unset($_SESSION["carrinho"]);
-    // header("Location: controllerProduto.php?opcao=exibirProdutosVenda");
+    // header("Location: controllerbebida.php?opcao=exibirbebidasVenda");
 }
 
 if ($opcao == 4) {
