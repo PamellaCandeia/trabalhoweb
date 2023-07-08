@@ -34,6 +34,20 @@
             return $lista;
         }
 
+
+        public function exibeCidades(){
+            $rs = $this->con->query("SELECT * FROM cidades");
+
+            $lista = array();
+
+            while($row = $rs->fetch(PDO::FETCH_OBJ)){  
+    
+                $lista[] =  $row;
+            
+            }
+            return $lista;
+        }
+
         
 
 

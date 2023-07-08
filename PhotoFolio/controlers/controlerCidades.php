@@ -12,9 +12,11 @@
 
         $cidadeDAO = new cidadesDao();
         $lista = $cidadeDAO->getCidades();
+        $lista2 = $cidadeDAO->exibeCidades();
 
         session_start();
         $_SESSION['cidades'] = $lista;
+        $_SESSION['cidadesEX'] = $lista2;
         //var_dump($lista);
 
         if($opcao == 2){
