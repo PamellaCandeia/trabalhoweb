@@ -1,6 +1,7 @@
 <?php
-require_once("../dao/bebidadao.inc.php");
-require_once("../classes/Item.inc.php");
+require_once '../dao/bebidadao.inc.php';
+require_once '../classes/Item.inc.php';
+require_once '../dao/cidadesDAO.inc.php';
 
 $opcao = $_REQUEST['opcao'];
 
@@ -18,10 +19,15 @@ function array_search2($chave, $vetor)
 
 if ($opcao == 1) {
     $id = $_REQUEST['id'];
-    $bebidadao = new bebidadao();
+    $bebidadao = new BebidaDao();
     $bebida = $bebidadao->getbebida($id);
+    $cidadeDAO = new cidadesDao();
+    $lista = $cidadeDAO->getCidades();
+
 
     session_start();
+    $_SESSION['cidades'] = $lista;
+
     if (!isset($_SESSION["carrinho"])) {
         $carrinho = [];
     } else {

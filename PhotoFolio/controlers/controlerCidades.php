@@ -15,12 +15,12 @@
 
         session_start();
         $_SESSION['cidades'] = $lista;
-        var_dump($lista);
+        //var_dump($lista);
 
         if($opcao == 2){
             header('Location: ../views/formCadastroCliente.php');
         }else{
-            header('Location: ../views/formAlterarCliente.php');
+            header('Location: ../views/exibirC');
         }
 
 

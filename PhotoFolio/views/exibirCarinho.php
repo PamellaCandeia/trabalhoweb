@@ -41,6 +41,11 @@ $numerador = 1;
               $carrinho = $_SESSION['carrinho'];
               $cliente = $_SESSION['cliente'];
               $cidades = $_SESSION['cidades'];
+
+              //var_dump( $_SESSION['cidades']);
+
+
+
             }
 
       ?>
@@ -81,7 +86,7 @@ $numerador = 1;
                 $soma += $item->getValorItem();
 
                 foreach($cidades as $cidadeCliente){
-                  if($cidadeCliente->getCidadeId() == $cliente->getCidade()){
+                  if(($cidadeCliente->getCidadeId()) == ($cliente->getCidade())){
                     $frete = $cidadeCliente->getValorFrete();
                   }
                 }
