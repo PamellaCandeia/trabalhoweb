@@ -55,7 +55,7 @@ if ($opcao == 1) {
 
 if ($opcao == 2) {
     session_start();
-    $index = (int)$_REQUEST["id"];
+    $index = (int)$_REQUEST["inde"];
     $carrinho = $_SESSION["carrinho"];
 
     for ($i = 0; $i < count($carrinho); $i++) {
@@ -66,7 +66,7 @@ if ($opcao == 2) {
     }
 
     $_SESSION["carrinho"] = $carrinho;
-    // header("Location: ../views/exibirCarrinho.php");
+    header("Location: ../views/exibirCarinho.php");
 }
 
 if ($opcao == 3) {
