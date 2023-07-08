@@ -27,7 +27,7 @@
               <img src="assets/img/gallery/vinhos.jpg" class="img-fluid" alt="Vinhos">
               <div class="gallery-links d-flex align-items-center justify-content-center">
                 
-                <a href="ExibicaoParaVenda.php" class="details-link"><h1 class="details-link"> Vinhos </h1></a>
+                <a href="../controlers/controlerBebida.php?opcao=6" class="details-link"><h1 class="details-link"> Vinhos </h1></a>
               </div>
             </div>
           </div><!-- End Gallery Item -->
@@ -35,7 +35,7 @@
             <div class="gallery-item h-100">
               <img src="assets/img/gallery/cerveja.jpg" class="img-fluid" alt="">
               <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="ExibicaoParaVenda.php" class="details-link"><h1 class="details-link"> Alcóolicos </h1></a>
+                <a href="../controlers/controlerBebida.php?opcao=6" class="details-link"><h1 class="details-link"> Alcóolicos </h1></a>
               </div>
             </div>
           </div><!-- End Gallery Item -->
@@ -43,7 +43,7 @@
             <div class="gallery-item h-100">
               <img src="assets/img/gallery/Refrigerante.jpg" class="img-fluid" alt="">
               <div class="gallery-links d-flex align-items-center justify-content-center">
-              <a href="ExibicaoParaVenda.php" class="details-link"><h1 class="details-link"> Refrigerantes </h1></a>
+              <a href="../controlers/controlerBebida.php?opcao=6" class="details-link"><h1 class="details-link"> Refrigerantes </h1></a>
               </div>
             </div>
           </div><!-- End Gallery Item -->
@@ -51,7 +51,7 @@
             <div class="gallery-item h-100">
               <img src="assets/img/gallery/Sucos.jpg" class="img-fluid" alt="">
               <div class="gallery-links d-flex align-items-center justify-content-center">
-              <a href="ExibicaoParaVenda.php" class="details-link"><h1 class="details-link"> Sucos </h1></a>
+              <a href="../controlers/controlerBebida.php?opcao=6" class="details-link"><h1 class="details-link"> Sucos </h1></a>
               </div>
             </div>
           </div><!-- End Gallery Item -->

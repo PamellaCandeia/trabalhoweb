@@ -18,6 +18,7 @@ function array_search2($chave, $vetor)
 }
 
 if ($opcao == 1) {
+
     $id = $_REQUEST['id'];
     $bebidadao = new BebidaDao();
     $bebida = $bebidadao->getbebida($id);
@@ -25,26 +26,31 @@ if ($opcao == 1) {
     $lista = $cidadeDAO->getCidades();
 
 
-    session_start();
-    $_SESSION['cidades'] = $lista;
+    
+        session_start();
+        $_SESSION['cidades'] = $lista;
+    
+        if (!isset($_SESSION["carrinho"])) {
+            $carrinho = [];
+        } else {
+            $carrinho = $_SESSION["carrinho"];
+        }
+    
+        $item = new Item($bebida);
+        $index = array_search2($item->getbebida()->getBebida_id(), $carrinho);
+        if ($index != -1) {
+            $carrinho[$index]->setQuantidade();
+            $carrinho[$index]->setValorItem();
+        } else {
+            $carrinho[] = $item;
+        }
+    
+        $_SESSION["carrinho"] = $carrinho;
+        header("Location: ../views/exibirCarinho.php");
+       
+   
 
-    if (!isset($_SESSION["carrinho"])) {
-        $carrinho = [];
-    } else {
-        $carrinho = $_SESSION["carrinho"];
-    }
-
-    $item = new Item($bebida);
-    $index = array_search2($item->getbebida()->getBebida_id(), $carrinho);
-    if ($index != -1) {
-        $carrinho[$index]->setQuantidade();
-        $carrinho[$index]->setValorItem();
-    } else {
-        $carrinho[] = $item;
-    }
-
-    $_SESSION["carrinho"] = $carrinho;
-    header("Location: ../views/exibirCarinho.php");
+   
 }
 
 if ($opcao == 2) {
@@ -67,16 +73,9 @@ if ($opcao == 3) {
     session_start();
 
     unset($_SESSION["carrinho"]);
-    // header("Location: controllerbebida.php?opcao=exibirbebidasVenda");
+    header("Location: controlerBebida.php?opcao=6");
 }
 
 if ($opcao == 4) {
-    $total = (float)$_REQUEST['total'];
-    session_start();
-    $_SESSION["total"] = $total;
-    if (isset($_SESSION["cliente"])) {
-        header("Location: ../views/dadosPagamento.php");
-    } else {
-        header("Location: ../views/formLogin.php");
-    }
+    
 }

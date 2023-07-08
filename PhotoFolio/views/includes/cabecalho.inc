@@ -55,14 +55,13 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.php">Home</a></li>
-          <li><a href="about.php">About</a></li>
+          <li><a href="../controlers/controlerBebida.php?opcao=6">Loja</a></li>
           <li class="dropdown"><a href="#"><span>Bebidas</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="../views/formBebida.php">Cadastro de bebidas</a></li>
               <li><a href="../controlers/controlerBebida.php?opcao=2">Portifolio</a></li>
             </ul>
           </li>
-          <li><a href="services.php">Services</a></li>
           <li><a href="formLogin.php" class="active">Login</a></li>
         </ul>
       </nav><!-- .navbar -->

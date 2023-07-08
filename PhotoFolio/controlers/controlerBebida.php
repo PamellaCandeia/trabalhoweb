@@ -26,7 +26,7 @@
         if($opcao == 2){
              header('Location: ../views/galleryBebidas.php');
         }else{
-            //  header("Location: ../views/exibirbebidasVenda.php");
+            header("Location: ../views/ExibicaoParaVenda.php");
         }
 
 

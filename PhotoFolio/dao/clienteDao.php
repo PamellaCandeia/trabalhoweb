@@ -105,9 +105,10 @@ class ClienteDAO
         $cliente->setCNPJ($row->cnpj);
         $cliente->setNome($row->nome);
         $cliente->setEndereco($row->endereco);
-        $cliente->setCidade($row->cidade);
+        $cliente->setCidade($row->id_cidade);
         $cliente->setLogin($row->login);
         $cliente->setSenha($row->senha);
+        $cliente->setID_cliente($row->id_cliente);
         return $cliente;
     }
 }

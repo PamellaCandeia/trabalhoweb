@@ -42,7 +42,7 @@ $numerador = 1;
               $cliente = $_SESSION['cliente'];
               $cidades = $_SESSION['cidades'];
 
-              //var_dump( $_SESSION['cidades']);
+             //var_dump( $_SESSION['cliente']);
 
 
 
@@ -72,7 +72,7 @@ $numerador = 1;
                 ?>
                         
                 <tr align="center">
-                  <td><?= $numerador ?></td>
+                  <td><?= $numerador    ?></td>
                   <td><?= $item->getBebida()->getBebida_id(); ?></td>
                   <td><?= $item->getBebida()->getNome(); ?></td>
                   <td><?= $item->getBebida()->getFabricante(); ?></td>
@@ -80,24 +80,24 @@ $numerador = 1;
                   <td>R$ <?= $item->getBebida()->getPreco(); ?></td>
                   <td><?= $item->getBebida()->getEstoque(); ?></td>
                   <td>R$ <?= $item->getValorItem(); ?></td>
-                  <td><button type="submit"><a href="../controlers/controlerCarrinho.php?opcao=2&index=<?= $numerador-1?>">Remover</a></button></td>
+                  <td><button type="submit"><a href="../controlers/controlerCarrinho.php?opcao=3">Remover</a></button></td>
                 </tr>
               <?php
                 $soma += $item->getValorItem();
-
-                foreach($cidades as $cidadeCliente){
-                  if(($cidadeCliente->getCidadeId()) == ($cliente->getCidade())){
-                    $frete = $cidadeCliente->getValorFrete();
-                  }
-                }
-
-                $somacomfrete = $soma + $frete;
                 $numerador++;
               }//fim forech
 
+              foreach($cidades as $cidadeCliente){
+                if(($cidadeCliente->getCidadeId()) == ($cliente->getCidade())){
+                  $frete = $cidadeCliente->getValorFrete();
+                }
+              }
+
+              $somacomfrete = $soma + $frete;
+
                ?>
-               <tr align="right"><td colspan="5"><font face="Verdana" size="4" color="red"><b>Frete = R$ <?= $cliente->getCidade()->getValorFrete(); ?></b></font></td></tr>
-               <tr align="right"><td colspan="5"><font face="Verdana" size="4" color="red"><b>Valor Total = R$ <?= $somacomfrete ?></b></font></td></tr>
+               <tr align="right"><td ><font face="Verdana"  color="white"><b>Frete = R$ <?= $frete ?></b></font></td></tr>
+               <tr align="right"><td ><font face="Verdana"  color="green"><b>Valor Total = R$ <?= $somacomfrete ?></b></font></td></tr>
                
               </div>
       </font>
@@ -105,8 +105,8 @@ $numerador = 1;
 
       <p>
           
-          <a href="../views/ExibicaoParaVenda.php" class="btn-get-started">Continuar Comprando</a><br><br>
-          <a href="../controlers/controlerCarrinho.php?opcao=5&total=<?= $somacomfrete ?>" class="btn-get-started">Finalizar Compra</a>
+          <!-- <a href="../views/ExibicaoParaVenda.php" class="btn-get-started">Continuar Comprando</a><br><br>
+          <a href="../controlers/controlerCarrinho.php?opcao=5&total=<?= $somacomfrete ?>" class="btn-get-started">Finalizar Compra</a> -->
 
    
  

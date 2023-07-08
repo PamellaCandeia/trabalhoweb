@@ -8,8 +8,11 @@ class Cliente
     private $id_cidade;
     private $login;
     private $senha;
+
+    public function __construct()
+    {
+    }
    
-    
     public function setCliente($nome, $cnpj, $endereco, $id_cidade, $login, $senha)
     {
         $this->nome = $nome;

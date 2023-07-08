@@ -19,14 +19,16 @@
             $lista = array();
 
             while($row = $rs->fetch(PDO::FETCH_OBJ)){  
-                // $cidade = new Cidade();
-                // $cidade->setCidadeId($row->id_cidade);
-                // $cidade->setCEP($row->CEP);
-                // $cidade->setCidadeN($row->cidade);
-                // $cidade->setEstado($row->estado);
-                // $cidade->setValorFrete($row->valorfrete_porPeso);
-                // $cidade->setPeso($row->peso);
-                $lista[] =  $row;
+    
+                $cidade = new Cidade();
+                $cidade->setCidadeId($row->id_cidade);
+                $cidade->setCEP($row->CEP);
+                $cidade->setCidadeN($row->cidade);
+                $cidade->setEstado($row->estado);
+                $cidade->setValorFrete($row->valorfrete_porPeso);
+                $cidade->setPeso($row->peso);
+                // $lista[] =  $row;
+                $lista[] =  $cidade;
             
             }
             return $lista;

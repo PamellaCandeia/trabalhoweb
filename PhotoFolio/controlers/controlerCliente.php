@@ -16,7 +16,7 @@
         if($cliente != NULL){
             session_start();
             $_SESSION['cliente'] = $cliente;
-            header('Location: ../views/galleryBebidas.php');
+            header('Location: ../views/index.php');
 
         }else{
             header('Location: ../views/formLogin.php?erro=1');
