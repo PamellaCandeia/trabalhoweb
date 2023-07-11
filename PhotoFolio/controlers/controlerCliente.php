@@ -22,12 +22,7 @@
             header('Location: ../views/formLogin.php?erro=1');
         }
      
-        // $produto = new Produto();
-        // $produto->setProduto($_REQUEST['nome'], $_REQUEST['descricao'], $_REQUEST['data'], $_REQUEST['preco'], $_REQUEST['estoque'], $_REQUEST['Referencia'], $_REQUEST['fabricante']);
-        // $produtoDao = new ProdutoDao();
-        // $produtoDao->incluirProduto($produto);
-
-        // header('Location: controlerProduto.php?opcao=2');
+       
 
     }else if($opcao == 2 || $opcao == 6){//incluir
 
@@ -49,23 +44,6 @@
         }else{
             header("Location: ../views/formCadastroCliente.php?erro=1");
         }
-
-
-        
-
-    //     $produtoDao = new ProdutoDao();
-    //     $lista = $produtoDao->getProdutos();
-
-    //     session_start();
-    //     $_SESSION['produtos'] = $lista;
-
-
-       
-    //    if($opcao == 2){
-    //         header('Location: ../views/exibirProdutos.php');
-    //     }else{
-    //         header("Location: ../views/exibirProdutosVenda.php");
-    //     }
 
 
     }else if($opcao==3){
