@@ -1,30 +1,49 @@
 <?php
+    require_once '../Classes/ProdutosLocacao.php';
+    require_once '../Classes/Locacao.php';
     require_once '../dao/produtoLDao.inc.php';
-    require_once '../classes/locacaoDao.in.php';
+    require_once '../dao/locacaoDao.inc.php';
 
     $opcao = (int)$_REQUEST['opcao'];
 
     if($opcao == 1){//incluir
+
+        $id = $_REQUEST['pid'];
      
         $produto = new Locacao();
-        $produto->setLocacao($_REQUEST['Nome'],$_REQUEST['Locacao'],$_REQUEST['entrega'], $_REQUEST['quant']);
-        $produtoDao = new ProdutoDao();
-        $produtoDao->incluirLocacao($produto);
+        $encontrar = new ProdutoDao();
+        $encontrado = $encontrar->getProduto($id);
+        $produto->setLocacao($_REQUEST['pid'],$_REQUEST['Locacao'],$_REQUEST['entrega'], $_REQUEST['quant']);
+        $produtoDao = new LocacaoDao();
+        $produto->setTotalDiarias($_REQUEST['Locacao'],$_REQUEST['entrega']);
+        $valorTotal = $produto->getTotalDiarias() * $encontrado->getPrecoUnitario();
+        $produto->setValorTotal($valorTotal);
+        $produto->setSituacao('Alugado');
+        $novoEstoque = $encontrado->getEstoque() - $_REQUEST['quant'];
+        $encontrado->setEstoque($novoEstoque);
 
-        header('Location: controlerProdutoL.php?opcao=2');
+        if($_REQUEST['quant'] < $encontrado->getEstoque()){
+
+            $produtoDao->incluirLocacao($produto);
+            header('Location: controlerLocacao.php?opcao=2');
+
+        }
+
+
+        
 
     }else if($opcao == 2 || $opcao == 6){//exibir todos
 
-         $produtoDao = new ProdutoDao();
-         $lista = $produtoDao->getProdutos();
+         $produtoDao = new LocacaoDao();
+         $lista = $produtoDao->getLocacoes();
 
          session_start();
-         $_SESSION['ProdutosLocacao'] = $lista;
+         $_SESSION['ListaDeLocacao'] = $lista;
 
 
        
         if($opcao == 2){
-             header('Location: ../views/galleryLocacao.php');
+             header('Location: ../views/galleryListaLocacao.php');
         }else{
             header("Location: ../views/ExibicaoParaVenda.php");
         }
@@ -53,13 +72,7 @@
 
     }else if($opcao == 5){//alteração
 
-        $locacao = new Locacao();
-        $bebida->setLocacao($_REQUEST['Nome'], $_REQUEST['Locacao'],$_REQUEST['entrega'],$_REQUEST['quant']);
-        $bebida->setbebida_id($_REQUEST['pid']);
-        $bebidaDao = new bebidaDao();
-        $bebidaDao->Alterarbebidas($bebida);
-
-        header('Location: controlerbebida.php?opcao=2');
+        
 
 
     }

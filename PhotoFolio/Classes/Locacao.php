@@ -3,8 +3,6 @@
 
  class Locacao
 {
-    private ProdutosLocacao $Produto;
-    private $nome;
     private $idProduto;
     private $idLocacao;
     private $dataLocacao;
@@ -14,9 +12,9 @@
     private $situacao;
     private $totalDiarias;
 
-    function setLocacao($nome, $dataLocacao, $dataEntrega, $quantidade)
+    function setLocacao( $idProduto, $dataLocacao, $dataEntrega, $quantidade)
     {
-        $this->nome = $nome;
+        $this->idProduto = $idProduto;
         $this->quantidade = $quantidade;
         $this->dataLocacao = $dataLocacao;
         $this->dataEntrega = $dataEntrega;
@@ -27,9 +25,9 @@
         return $this->quantidade;
     }
 
-    public function setQuantidade()
+    public function setQuantidade($quant)
     {
-        return $this->quantidade;
+        return $this->quantidade = $quant;
     }
 
 
@@ -79,16 +77,16 @@
 
     public function setDataEntrega($dataEntrega)
     {
-        return $this->dataLocacao = $dataEntrega;
+        return $this->dataEntrega = $dataEntrega;
     }
 
 
-    public function getDataSituacao()
+    public function getSituacao()
     {
         return $this->situacao;
     }
 
-    public function setDataSituacao($situacao)
+    public function setSituacao($situacao)
     {
         return $this->situacao = $situacao;
     }
@@ -99,14 +97,16 @@
     }
 
     public function setTotalDiarias($dataLocacao , $dataEntrega){
-        
-        return $this->totalDiarias = $dataEntrega - $dataLocacao;
+        $locacao = DateTime::createFromFormat('Y-m-d', $dataLocacao);
+        $entrega = DateTime::createFromFormat('Y-m-d', $dataEntrega);
+        $numdias = $entrega->diff($locacao);
+        return $this->totalDiarias = $numdias->days;
     }
     
 
-    public function setValorTotal($totalDiarias)
+    public function setValorTotal($total)
     {
-        $this->ValorTotal =  $totalDiarias * $this->Produto->getPrecoUnitario();
+        $this->ValorTotal =  $total;
     }
 
    

@@ -45,9 +45,11 @@
 
         session_start();
         $_SESSION['Locacao'] = $produto;
+        $_SESSION['ID'] = $id;
+
 
        
-        header("Location: ../views/TabelaLocacao.php?id=$id");
+        header("Location: ../views/TabelaLocacao.php");
       
        
 

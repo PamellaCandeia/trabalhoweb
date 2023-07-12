@@ -36,7 +36,7 @@
               ?>
                 <div class="col-md-6 form-group mt-3 mt-md-0" >
                 <input type="hidden" name="pid" value="1">
-                Nome do produto: <input type="text" class="form-control"  name="Nome" placeholder="Insira o nome do produto" required value="<?=$id?>"><br>
+                Nome do produto: <input type="text" class="form-control"  name="Nome" placeholder="Insira o nome do produto" required value="<?= $bebida->getbebida_id(); ?>"><br>
                 Tipo: <input type="text" class="form-control"  name="tipo" placeholder="Insira o tipo do produto" required><br>
                 Preço Diária: <input type="number" step="any" class="form-control"  name="Preco" placeholder="Insira o preço da diaria do produto" required><br>
                 Estoque: <input type="number" class="form-control"  name="Estoque" placeholder="Insira a quantidade do estoque" required><br>
@@ -49,7 +49,7 @@
                 
               ?>
                 <div class="col-md-6 form-group mt-3 mt-md-0" >
-                Nome do produto: <input type="text" class="form-control"  name="Nome" placeholder="Insira o nome do produto" required value="<?=$id?>"><br>
+                Nome do produto: <input type="text" class="form-control"  name="Nome" placeholder="Insira o nome do produto" required ><br>
                 Tipo: <input type="text" class="form-control"  name="tipo" placeholder="Insira o tipo do produto" required><br>
                 Preço Diária: <input type="number" step="any" class="form-control"  name="Preco" placeholder="Insira o preço da diaria do produto" required><br>
                 Estoque: <input type="number" class="form-control"  name="Estoque" placeholder="Insira a quantidade do estoque" required><br>

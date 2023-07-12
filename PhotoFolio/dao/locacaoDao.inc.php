@@ -14,13 +14,16 @@
 
         public function incluirLocacao(Locacao $produto){
             var_dump($this->con);
-            $sql = $this->con->prepare("insert into produtosloc (idProduto, dataLocacao, dataEntrega, quantidade)
-            values(:idProduto, :dataLo, :Ent, :quant)");
+            $sql = $this->con->prepare("insert into locacao (idProduto, dataLocacao, dataEntrega, quantidade, ValorTotal, situacao, totalDiarias)
+            values(:idProduto, :dataLo, :Ent, :quant, :vt, :sit, :tD)");
 
             $sql->bindValue(':idProduto', $produto->getId_produto());
             $sql->bindValue(':dataLo', $produto->getDataLocacao());
             $sql->bindValue(':Ent', $produto->getDataEntrega());
             $sql->bindValue(':quant', $produto->getQuantidade());
+            $sql->bindValue(':vt', $produto->getValorTotal());
+            $sql->bindValue(':sit', $produto->getSituacao());
+            $sql->bindValue(':tD', $produto->getTotalDiarias());
             $sql->execute();
 
 
@@ -35,18 +38,21 @@
         }
 
 
-        public function getProdutos(){
-            $rs = $this->con->query("SELECT * FROM produtosloc");
+        public function getLocacoes(){
+            $rs = $this->con->query("SELECT * FROM locacao");
 
             $lista = array();
 
             while($row = $rs->fetch(PDO::FETCH_OBJ)){
-                $produto = new ProdutosLocacao();
-                $produto->setProduto_id($row->Produto_id);
-                $produto->setNome($row->nome);
-                $produto->setTipo($row->volume);
-                $produto->setPrecoUnitario($row->precoUnitario);
-                $produto->setEstoque($row->qde_estoque);
+                $produto = new Locacao();
+                $produto->setIDLocacao($row->idLocacao);
+                $produto->setIdProduto($row->idProduto);
+                $produto->setDataLocacao($row->dataLocacao);
+                $produto->setDataEntrega($row->dataEntrega);
+                $produto->setQuantidade($row->quantidade);
+                $produto->setValorTotal($row->ValorTotal);
+                $produto->setSituacao($row->situacao);
+                $produto->setTotalDiarias($row->dataLocacao, $row->dataEntrega);
 
                 $lista[] =  $produto;
                 //o atributo do row é o mesmo nome do banco;
@@ -84,6 +90,9 @@
             $produto->setDataLocacao($row->dataLocacao);
             $produto->setDataEntrega($row->dataEntrega);
             $produto->setQuantidade($row->quantidade);
+            $produto->setValorTotal($row->ValorTotal);
+            $produto->setSituacao($row->situacao);
+            $produto->setTotalDiarias($row->dataLocacao, $row->dataEntrega);
             return $produto;
         }
 

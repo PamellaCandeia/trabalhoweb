@@ -44,7 +44,7 @@
                 $produto = new ProdutosLocacao();
                 $produto->setProduto_id($row->Produto_id);
                 $produto->setNome($row->nome);
-                $produto->setTipo($row->volume);
+                $produto->setTipo($row->Tipo);
                 $produto->setPrecoUnitario($row->precoUnitario);
                 $produto->setEstoque($row->qde_estoque);
 
@@ -81,7 +81,7 @@
             $produto = new ProdutosLocacao();
             $produto->setProduto_id($row->Produto_id);
             $produto->setNome($row->nome);
-            $produto->setTipo($row->volume);
+            $produto->setTipo($row->Tipo);
             $produto->setPrecoUnitario($row->precoUnitario);
             $produto->setEstoque($row->qde_estoque);
             return $produto;

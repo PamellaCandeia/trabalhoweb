@@ -2,8 +2,9 @@
 <?php
      require_once 'includes/cabecalho.inc';
      session_start();
-     if(isset($_SESSION['bebida'])){
-      $bebida = $_SESSION['bebida'];
+     if(isset($_SESSION['Locacao'])){
+      $locacao = $_SESSION['Locacao'];
+      $id = $_SESSION['ID'];
      }
 ?>
 
@@ -25,39 +26,23 @@
     <section id="contact" class="contact">
       <div class="container">
 
-        <?=var_dump($_SESSION['bebida']);?>
+        <?=var_dump($_SESSION['Locacao']);?>
         <div class="row justify-content-center mt-4">
 
           <div class="col-lg-9">
-            <form action="../controlers/controlerProdutoL.php" method="get" role="form" class="php-email-form h4" style="color: white;">
+            <form action="../controlers/controlerLocacao.php" method="get" role="form" class="php-email-form h4" style="color: white;">
               
-              <?php
-              if(isset($_REQUEST['id'])) :
-              ?>
+              
                 <div class="col-md-6 form-group mt-3 mt-md-0" >
-                <input type="hidden" name="pid" value="1">
-                Nome do produto: <input type="text" class="form-control"  name="Nome" placeholder="Insira o nome do produto" required value="<?=$id?>"><br>
-                Data de Locação: <input type="date" class="form-control"  name="Locacao" placeholder="Insira o tipo do produto" required><br>
-                Data de Entrega: <input type="date" class="form-control"  name="entrega" placeholder="Insira o tipo do produto" required><br>
-                Quantidade: <input type="number" step="any" class="form-control"  name="quant" placeholder="Insira o preço da diaria do produto" required><br>
-              </div>
 
-              <input type="hidden" name="opcao" value="5"><p></p>
-              <div class="text-center"><button type="submit">Locar</button> <input type="reset" value="Cancelar" ></div>
-              <?php
-                else :
                 
-              ?>
-                <div class="col-md-6 form-group mt-3 mt-md-0" >
-                Nome do produto: <input type="text" class="form-control"  name="Nome" placeholder="Insira o nome do produto" required value="<?=$id?>"><br>
+                <input type="hidden" name="pid" value="<?= $id ?>"><p></p>
                 Data de Locação: <input type="date" class="form-control"  name="Locacao" placeholder="Insira o tipo do produto" required><br>
                 Data de Entrega: <input type="date" class="form-control"  name="entrega" placeholder="Insira o tipo do produto" required><br>
                 Quantidade: <input type="number" step="any" class="form-control"  name="quant" placeholder="Insira o preço da diaria do produto" required><br>
                 <input type="hidden" name="opcao" value="1"><p></p>
                 <div class="text-center"><button type="submit">Locar</button> <input type="reset" value="Cancelar" ></div>
-              <?php
-                endif;
-              ?>              
+                        
               
 
            
